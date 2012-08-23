@@ -1,0 +1,91 @@
+body {
+	background-color: #222;
+	color: #ccc;
+}
+.sidebar-nav, .copy  {
+	background: url(../img/trans.png);
+}
+
+.copy {
+	padding:15px 0 25px 25px;
+}
+.well {
+	font-size:18px;
+}
+.sidebar-nav li {
+	line-height:30px;
+}
+.logo {
+	padding: 15px 0 25px 25px;
+}
+img#bg {
+	position: fixed;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	z-index:-1;
+}
+
+.thumbrow {
+	background: url(../img/trans.png);
+	position:absolute; 
+	bottom: 10px;
+}
+.image_carousel {
+	padding: 15px 0 15px 0px;
+	position: relative;
+}
+.image_carousel img {
+	border: 1px solid #333;
+	background-color: #333;
+	padding: 9px;
+	margin: 7px;
+	display: block;
+	float: left;
+}
+a.prev, a.next {
+	width: 30px;
+	height: 30px;
+	display: block;
+	top: 50px;
+	position: absolute;
+}
+
+a.prev {
+	background: url(../img/gray_prev.png) no-repeat transparent;
+}
+a.next {
+	background: url(../img/gray_next.png) no-repeat transparent;
+	}
+
+a.prev {
+	
+	background-position: 0-30px; 
+}
+a.prev:hover {
+	background-position: 0 0; 
+}
+a.next {			
+	right: 0px;
+	background-position: 0 -30px; 
+}
+a.next:hover {		
+	background-position: 0 0; 
+}
+a.prev span, a.next span {
+	display: none;
+}
+.clearfix {
+	float: none;
+	clear: both;
+}
+a:hover {
+	color:#08A;
+}
+footer {
+	position: absolute;
+	display: block;
+	bottom:10px;
+	left:30px;
+}

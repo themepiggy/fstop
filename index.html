@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>f-stop, Image gallery from themestrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A beatiful full screen image gallery for your photos built on bootstrap">
+    <meta name="author" content="themestrap">
+
+    <!-- styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+     
+    </style>
+    
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+<div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="sidebar-nav">
+            <div class="logo">
+              <h1>f-stop</h1>
+            </div>
+            <ul class="nav nav-list">
+              <li class="active"><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+
+        <div id="viewport" class="copy span6">
+          
+        </div>
+        <div id="home" class="hide">
+          <h2>Welcome to F-Stop</h2>
+          <p>The photos take center stage in this theme.</p>
+          <p>Space for content is here though and you can pop in as many items as you like</p>
+        </div>
+        <div id="about" class="hide">
+          <h2>About</h2>
+          <p>F-Stop is an HTML template based on Twitter Bootstrap aimed at photography based websites.</p>
+          <p>The site features full screen background images that are selected from a carousel sitting at the bottom of the screen.</p>
+        </div>
+        <div id="contact" class="hide">
+          <h2>Get in touch</h2>
+          <p>You can always get in touch with me on the themestrap <a href="http:llthemestrap.com/contact">contact page</a></p>.
+        </div>
+      </div> <!-- row -->
+</div>
+
+
+<div class="container">
+<div class="row thumbrow" >
+  <div class="span12">
+    <div class="image_carousel">
+      <div id="scroll">
+        <img src="img/bottle_thumb.jpg" />
+        <img src="img/cheval_thumb.jpg" />
+        <img src="img/pencil_thumb.jpg" />
+        <img src="img/polar_thumb.jpg" />
+        <img src="img/seal_thumb.jpg" />
+        <img src="img/statue_thumb.jpg" />
+        <img src="img/tree_thumb.jpg" />
+        <img src="img/treestump_thumb.jpg" />
+        <img src="img/waterfall_thumb.jpg" />
+        <img src="img/trees_thumb.jpg" />
+        <img src="img/flower_thumb.jpg" />
+        <img src="img/horses_thumb.jpg" />
+        <img src="img/lynx_thumb.jpg" />
+        <img src="img/notre_thumb.jpg" />
+        <img src="img/rock_thumb.jpg" />
+      </div>
+    </div>
+    <a class="prev" id="prev" href="#"><span>prev</span></a>
+    <a class="next" id="next" href="#"><span>next</span></a>
+  </div>
+</div>
+
+</div>
+<footer>
+<a href="http://themestrap.com">F-Stop Photo Portfolio Theme</a>
+</footer>
+
+
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <script src="js/jquery.carouFredSel-5.6.2.js" type="text/javascript"></script>
+    <script src="js/jquery.fullScreenImage.js" type="text/javascript"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+   
+<!-- Plugin initialization -->
+  <script type="text/javascript">
+
+
+    $(document).ready(function () {
+      
+
+      //hook up the menu 
+      $(".nav li").click(function() {
+        var id = ($('a', this).attr('href'));
+        $('#viewport').html($(id).html());
+        //now remove the active class from all li
+        $(this).siblings().removeClass("active");
+        $(this).addClass("active");
+
+        return false;
+      });
+
+      //initialize with the info from the home div
+      $('#viewport').html($('#home').html());
+
+      //hook up the scroll
+      $("#scroll").carouFredSel({
+        auto: false,
+        prev: "#prev",
+        next: "#next"
+      });
+      $('#scroll img').click(function(){
+        $.backstretch($(this).attr("src").replace("_thumb",""));
+
+      })
+
+      //selecet the first image for our full screen background 
+      $.backstretch($("#scroll:first-child > img").attr("src").replace("_thumb",""));
+    });
+  </script>
+
+  </body>
+</html>
